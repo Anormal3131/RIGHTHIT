@@ -178,6 +178,20 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
+        /* Hero Buton Grubu için CSS */
+        .button-group {
+            display: flex;
+            justify-content: center; /* Butonları grup içinde ortalar */
+            align-items: center; /* Butonları dikeyde hizalar */
+            gap: 20px; /* Butonlar arası boşluk */
+            margin-top: 40px;
+        }
+
+        .cta-button, .discord-button { /* Genel buton stillerini sıfırlama veya ayarlama */
+            margin: 0; /* Üst/alt margin'i sıfırlar, button-group zaten boşluk veriyor */
+        }
+        /* Bitiş - Hero Buton Grubu için CSS */
+
         .cta-button {
             margin: 0 auto;
             display: block;
@@ -643,85 +657,78 @@
             transform: translateY(0);
         }
 
-        /* Pricing Section */
+        /* Pricing Section - MODERNLEŞTİRME */
         .pricing {
-            padding: 120px 0;
-            position: relative;
+            padding: 100px 0;
+            background: var(--dark); /* Arka planı ana koyu tema ile uyumlu hale getir */
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 30px; /* Kartlar arası boşluk */
+            margin-top: 60px;
         }
 
         .pricing-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.05); /* Hafif yarı saydam arka plan */
+            border-radius: 15px; /* Daha yumuşak köşeler */
+            padding: 35px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
+            display: flex; /* Flexbox ile iç düzen */
+            flex-direction: column; /* İçerik dikey sıralansın */
+            justify-content: space-between; /* İçeriği dikeyde yay, butonu aşağı iter */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Hafif gölge */
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(var(--primary-rgb, 0, 255, 136), 0.3); /* --primary-rgb yoksa varsayılan renk */
         }
 
         .pricing-card.featured {
-            transform: scale(1.05);
             border: 2px solid var(--primary);
+            box-shadow: 0 0 30px rgba(var(--primary-rgb, 0, 255, 136), 0.4); /* Vurgulu kart için daha belirgin gölge */
         }
-
+        
         .pricing-card.featured::before {
             content: 'En Popüler';
             position: absolute;
             top: 20px;
-            right: -35px;
+            right: -35px; /* Şeridin konumunu ayarla */
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: var(--dark);
-            padding: 5px 40px;
+            padding: 6px 40px;
             transform: rotate(45deg);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .pricing-header {
-            margin-bottom: 30px;
+            font-size: 13px; /* Font boyutu biraz küçültüldü */
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .pricing-header h3 {
-            font-size: 28px;
+            font-size: 26px; /* Biraz daha küçük başlık */
             color: var(--light);
             margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover .pricing-header h3 {
-            text-shadow: 0 0 10px var(--primary),
-                         0 0 20px var(--primary);
         }
 
         .price {
-            font-size: 48px;
+            font-size: 42px; /* Fiyat boyutu ayarlandı */
             font-weight: 700;
-            color: var(--light);
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover .price {
-            text-shadow: 0 0 10px var(--primary),
-                         0 0 20px var(--primary);
+            color: var(--secondary); /* İkincil renk kullanıldı */
+            margin-bottom: 25px; /* Alt boşluk artırıldı */
         }
 
         .price span {
-            font-size: 18px;
-            color: #ccc;
+            font-size: 16px; /* Para birimi font boyutu */
+            font-weight: 400;
+            color: #bbb; /* Daha açık gri */
         }
 
         .pricing-features {
-            margin-bottom: 30px;
+            margin-bottom: 30px; 
+            flex-grow: 1; /* Özellikler listesinin esnemesini sağlar, butonu aşağı iter */
         }
 
         .pricing-features ul {
@@ -730,60 +737,37 @@
         }
 
         .pricing-features li {
-            color: #ccc;
-            margin-bottom: 15px;
+            color: #ddd;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover .pricing-features li {
-            color: #fff;
-            text-shadow: 0 0 5px var(--primary);
+            justify-content: flex-start; /* Özellikleri sola yasla */
+            gap: 12px; /* İkon ve metin arası boşluk */
+            font-size: 15px; /* Özellik metin boyutu */
         }
 
         .pricing-features i {
-            font-size: 18px;
+            font-size: 18px; /* İkon boyutu */
+            width: 20px; /* İkon için sabit genişlik */
+            text-align: center;
         }
 
         .pricing-features i.fa-check {
             color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover .pricing-features i.fa-check {
-            text-shadow: 0 0 10px var(--primary);
         }
 
         .pricing-features i.fa-times {
-            color: #ff4444;
+            color: #ff6b6b; /* Daha canlı bir kırmızı */
         }
 
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                       0 0 20px var(--primary),
-                       0 0 40px var(--primary);
+        /* Pricing kart içindeki buton için stil */
+        .pricing-card .cta-button {
+            margin-top: auto; /* Butonu flex container içinde en alta iter */
+            width: 100%; /* Buton kartın tam genişliğinde olsun */
+            padding: 15px 20px; /* Buton iç boşluğu */
+            font-size: 16px; /* Buton font boyutu */
         }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                       0 0 30px var(--primary),
-                       0 0 60px var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-            
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
-            }
-        }
+        /* BİTİŞ - Pricing Section MODERNLEŞTİRME */
 
         /* Glow Efektleri Kaldırıldı */
         .glow {
@@ -826,13 +810,6 @@
             0% { background-position: 0% 0%; }
             50% { background-position: 100% 100%; }
             100% { background-position: 0% 0%; }
-        }
-
-        .button-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
         }
 
         .discord-button {
@@ -945,7 +922,7 @@
                     <div class="stat-number">250+</div>
                     <div class="stat-title">Happy Clients</div>
                     <div class="stat-desc">Satisfied clients who trust us with their game development needs</div>
-                    <div class="stat-icon">🙋‍♂️🙋‍♂️</div>
+                    <div class="stat-icon">🙋‍♂️</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">5+</div>
@@ -963,7 +940,8 @@
         </div>
     </section>
 
-    <section id="pricing" class="pricin       <div class="container">
+    <section id="pricing" class="pricing">
+        <div class="container">
             <h2 class="section-title">Pricing</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
@@ -1088,9 +1066,8 @@
         });
 
         // Form Gönderimi
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
         document.querySelector('.contact-form').addEventListener('submit', async (e) => {
-            alert('Mesajınız gönderildi! En kısa sürede size dönüş yapacağız.');
+            e.preventDefault();
             
             const formData = {
                 name: document.querySelector('input[type="text"]').value,
@@ -1099,8 +1076,7 @@
             };
 
             try {
-                // Discord Webhook URL'sini buraya ekleyin
-                const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+                const webhookUrl = 'https://discord.com/api/webhooks/1365969231828750429/32KBcZYhWnJP730PcSNWRxrSIWfSddbx-Rd0cxl9viFpvTp4Y2-hr247Tj3pyFSlzpcY';
                 
                 const response = await fetch(webhookUrl, {
                     method: 'POST',
@@ -1108,7 +1084,27 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        content: `**New Contact Form Submission**\n\n**Name:** ${formData.name}\n**Email:** ${formData.email}\n**Message:** ${formData.message}`
+                        embeds: [{
+                            title: "New Contact Form Submission",
+                            color: 0x00ff88,
+                            fields: [
+                                {
+                                    name: "Name",
+                                    value: formData.name,
+                                    inline: true
+                                },
+                                {
+                                    name: "Email",
+                                    value: formData.email,
+                                    inline: true
+                                },
+                                {
+                                    name: "Message",
+                                    value: formData.message
+                                }
+                            ],
+                            timestamp: new Date().toISOString()
+                        }]
                     })
                 });
 
@@ -1122,6 +1118,7 @@
                 alert('Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
                 console.error('Form gönderme hatası:', error);
             }
+        });
 
         // Scroll Animasyonu
         const observerOptions = {
