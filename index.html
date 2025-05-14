@@ -362,7 +362,7 @@
             font-size: 16px;
         }
 
-        /* Pricing Section - ÖNCEKİ HALİNE DÖNDÜRÜLÜYOR */
+        /* Pricing Section - Orijinal haline getiriliyor */
         .pricing {
             padding: 120px 0;
             position: relative;
@@ -385,9 +385,6 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         
         .pricing-card.featured {
@@ -506,9 +503,8 @@
                 transform: translateY(-10px);
             }
         }
-        /* BİTİŞ - ÖNCEKİ HALİNE DÖNDÜRÜLÜYOR */
 
-        /* Contact Section - ÖNCEKİ HALİNE DÖNDÜRÜLÜYOR */
+        /* Contact Section - Orijinal Haline Getiriliyor */
         .contact {
             padding: 120px 0;
             background: rgba(255, 255, 255, 0.02);
@@ -536,9 +532,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .contact-form:hover {
@@ -575,7 +568,6 @@
             height: 180px;
             resize: none;
         }
-        /* BİTİŞ - ÖNCEKİ HALİNE DÖNDÜRÜLÜYOR */
 
         /* Footer */
         footer {
@@ -908,16 +900,25 @@
             left: 100%;
         }
 
-        /* BUTON HİZALAMA DÜZELTMELERİ (YENİ VE BASİT) */
+        /* BUTON HİZALAMA DÜZELTMELERİ (ÖNCEKİLER TEMİZLENDİ) */
+        /* .pricing-card > .cta-button { (BU BLOK TEMİZLENDİ)*/
+        /* } */
+
+        /* .contact-form .cta-button { (BU BLOK TEMİZLENDİ) */
+        /* } */
+        /* BİTİŞ - BUTON HİZALAMA DÜZELTMELERİ (ÖNCEKİLER TEMİZLENDİ) */
+
+        /* YENİ VE BASİT BUTON ORTALAMA KURALI */
         .pricing-card .cta-button,
         .contact-form .cta-button {
-            display: block; /* Butonun blok element gibi davranmasını sağlar */
-            width: -moz-fit-content; /* Firefox için */
-            width: fit-content; /* Butonun içeriği kadar geniş olmasını sağlar */
-            margin-left: auto;  /* Sol ve sağ margin'i otomatik ayarlayarak ortalar */
-            margin-right: auto; /* Sol ve sağ margin'i otomatik ayarlayarak ortalar */
-            margin-top: 25px;   /* Butonla üstündeki içerik arasına boşluk ekler (isteğe bağlı) */
+            display: block; 
+            width: -moz-fit-content; 
+            width: fit-content; 
+            margin-left: auto;  
+            margin-right: auto; 
+            margin-top: 25px;   
         }
+
     </style>
 </head>
 <body>
