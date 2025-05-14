@@ -364,67 +364,39 @@
 
         /* Contact Section */
         .contact {
-            padding: 120px 0;
-            background: rgba(255, 255, 255, 0.02);
-            position: relative;
-            overflow: hidden;
+            padding: 80px 0;
+            text-align: center; 
         }
 
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at bottom right, rgba(0, 184, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .contact-form {
+        .contact form {
             max-width: 700px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            margin: 0 auto; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .contact-form:hover {
-            box-shadow: 0 0 20px var(--primary),
-                       0 0 40px var(--primary);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .form-group input,
-        .form-group textarea {
+        .contact input[type="text"],
+        .contact input[type="email"],
+        .contact textarea {
             width: 100%;
-            padding: 18px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
             color: var(--light);
             font-size: 16px;
-            transition: all 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2),
-                       0 0 30px rgba(0, 255, 136, 0.1);
+        .contact textarea {
+            min-height: 150px;
+            resize: vertical;
         }
 
-        .form-group textarea {
-            height: 180px;
-            resize: none;
+        .contact button[type="submit"] {
+            width: fit-content; 
+            margin: 0 auto; 
+            display: block; 
         }
 
         /* Footer */
@@ -672,144 +644,81 @@
 
         /* Pricing Section */
         .pricing {
-            padding: 120px 0;
-            position: relative;
+            padding: 80px 0;
+            text-align: center; 
         }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .pricing-table {
+            display: flex;
+            justify-content: center; 
             gap: 30px;
             margin-top: 50px;
+            flex-wrap: wrap; 
         }
 
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
+        .plan {
+            background-color: rgba(255, 255, 255, 0.05);
             padding: 40px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
+            border-radius: 15px;
+            text-align: center; 
+            width: 300px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
         }
 
-        .pricing-card.featured {
-            transform: scale(1.05);
-            border: 2px solid var(--primary);
+        .plan:hover {
+            transform: translateY(-10px);
+            /* Eğer --primary-rgb tanımlı değilse, doğrudan bir renk kullanın veya tanımlayın */
+            /* box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3); */ 
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3); /* Örnek renk, --primary-rgb yoksa */
         }
 
-        .pricing-card.featured::before {
-            content: 'En Popüler';
-            position: absolute;
-            top: 20px;
-            right: -35px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .pricing-header {
-            margin-bottom: 30px;
-        }
-
-        .pricing-header h3 {
+        .plan h3 {
             font-size: 28px;
-            color: var(--light);
             margin-bottom: 15px;
-            transition: all 0.3s ease;
+            color: var(--primary);
         }
 
-        .pricing-card:hover .pricing-header h3 {
-            text-shadow: 0 0 10px var(--primary),
-                         0 0 20px var(--primary);
-        }
-
-        .price {
+        .plan .price {
             font-size: 48px;
             font-weight: 700;
-            color: var(--light);
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
+            color: var(--secondary);
+            margin-bottom: 25px;
         }
 
-        .pricing-card:hover .price {
-            text-shadow: 0 0 10px var(--primary),
-                         0 0 20px var(--primary);
-        }
-
-        .price span {
+        .plan .price span {
             font-size: 18px;
+            font-weight: 400;
             color: #ccc;
         }
 
-        .pricing-features {
-            margin-bottom: 30px;
-        }
-
-        .pricing-features ul {
+        .plan ul {
             list-style: none;
             padding: 0;
+            margin-bottom: 30px;
+            text-align: left; 
+            flex-grow: 1; 
         }
 
-        .pricing-features li {
-            color: #ccc;
-            margin-bottom: 15px;
+        .plan ul li {
+            margin-bottom: 12px;
+            color: #ddd;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
         }
 
-        .pricing-card:hover .pricing-features li {
-            color: #fff;
-            text-shadow: 0 0 5px var(--primary);
-        }
-
-        .pricing-features i {
+        .plan ul li i {
+            color: var(--primary);
+            margin-right: 10px;
             font-size: 18px;
         }
 
-        .pricing-features i.fa-check {
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover .pricing-features i.fa-check {
-            text-shadow: 0 0 10px var(--primary);
-        }
-
-        .pricing-features i.fa-times {
-            color: #ff4444;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                       0 0 20px var(--primary),
-                       0 0 40px var(--primary);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                       0 0 30px var(--primary),
-                       0 0 60px var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-            
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
-            }
+        .plan .btn {
+            margin-top: auto; 
+            width: 100%; 
         }
 
         /* Glow Efektleri Kaldırıldı */
@@ -1006,12 +915,10 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <h2 class="section-title">Pricing</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <div class="price">100<span> Robux</span></div>
-                    </div>
+            <div class="pricing-table">
+                <div class="plan">
+                    <h3>Starter</h3>
+                    <div class="price">100<span> Robux</span></div>
                     <div class="pricing-features">
                         <ul>
                             <li><i class="fas fa-check"></i> Basic Script Development</li>
@@ -1026,11 +933,9 @@
                     <a href="#contact" class="cta-button">Get Started</a>
                 </div>
 
-                <div class="pricing-card featured">
-                    <div class="pricing-header">
-                        <h3>Premium</h3>
-                        <div class="price">500<span> Robux</span></div>
-                    </div>
+                <div class="plan featured">
+                    <h3>Premium</h3>
+                    <div class="price">500<span> Robux</span></div>
                     <div class="pricing-features">
                         <ul>
                             <li><i class="fas fa-check"></i> Advanced Script Development</li>
@@ -1045,11 +950,9 @@
                     <a href="#contact" class="cta-button">Get Started</a>
                 </div>
 
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Ultra</h3>
-                        <div class="price">2000<span> Robux</span></div>
-                    </div>
+                <div class="plan">
+                    <h3>Ultra</h3>
+                    <div class="price">2000<span> Robux</span></div>
                     <div class="pricing-features">
                         <ul>
                             <li><i class="fas fa-check"></i> Custom Script Development</li>
