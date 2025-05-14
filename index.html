@@ -908,20 +908,16 @@
             left: 100%;
         }
 
-        /* BUTON HİZALAMA DÜZELTMELERİ */
-        .pricing-card > .cta-button {
-            margin-top: 20px;
-            align-self: center;
-        }
-
+        /* BUTON HİZALAMA DÜZELTMELERİ (YENİ VE BASİT) */
+        .pricing-card .cta-button,
         .contact-form .cta-button {
-            display: block;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10px;
+            display: block; /* Butonun blok element gibi davranmasını sağlar */
+            width: -moz-fit-content; /* Firefox için */
+            width: fit-content; /* Butonun içeriği kadar geniş olmasını sağlar */
+            margin-left: auto;  /* Sol ve sağ margin'i otomatik ayarlayarak ortalar */
+            margin-right: auto; /* Sol ve sağ margin'i otomatik ayarlayarak ortalar */
+            margin-top: 25px;   /* Butonla üstündeki içerik arasına boşluk ekler (isteğe bağlı) */
         }
-        /* BİTİŞ - BUTON HİZALAMA DÜZELTMELERİ */
     </style>
 </head>
 <body>
