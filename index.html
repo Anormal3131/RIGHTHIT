@@ -81,7 +81,8 @@
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 36px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -89,30 +90,21 @@
             text-decoration: none;
             font-weight: 500;
             position: relative;
-            padding: 5px 0;
-            transition: all 0.3s ease;
+            padding: 8px 0 8px 0;
+            transition: color 0.3s, border-bottom 0.3s, background 0.3s;
+            font-size: 17px;
+            border-bottom: 2px solid transparent;
+            border-radius: 6px;
         }
 
-        .nav-links a:hover {
-            text-shadow: 0 0 10px var(--primary),
-                         0 0 20px var(--primary);
+        .nav-links a:not(.discord-button):hover, .nav-links a.active {
+            color: var(--primary);
+            background: rgba(0,255,136,0.07);
+            border-bottom: 2px solid var(--primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            box-shadow: 0 0 10px var(--primary);
-        }
-
-        .nav-links a:hover::after {
-            transform: scaleX(1);
+        .nav-links a.active {
+            font-weight: 700;
         }
 
         /* Hero Section */
@@ -813,47 +805,30 @@
         }
 
         .discord-button {
-            background: #5865F2;
-            color: white;
-            padding: 18px 36px;
+            background: linear-gradient(90deg, #5865F2 60%, #7289da 100%);
+            color: #fff;
+            padding: 12px 32px;
             border: none;
-            border-radius: 50px;
-            font-weight: 600;
+            border-radius: 30px;
+            font-weight: 700;
             font-size: 18px;
             cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
+            gap: 12px;
+            box-shadow: 0 4px 24px 0 rgba(88,101,242,0.15);
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
         }
 
         .discord-button i {
-            font-size: 24px;
+            font-size: 22px;
         }
 
         .discord-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(88, 101, 242, 0.3),
-                       0 0 20px #5865F2,
-                       0 0 40px #5865F2;
-        }
-
-        .discord-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .discord-button:hover::before {
-            left: 100%;
+            background: linear-gradient(90deg, #7289da 0%, #5865F2 100%);
+            box-shadow: 0 8px 32px 0 rgba(88,101,242,0.25);
+            transform: translateY(-2px) scale(1.04);
         }
     </style>
 </head>
@@ -862,9 +837,14 @@
         <nav class="container">
             <a href="#" class="logo">RIGHTHIT</a>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#contact">Contact</a>
+                <a href="#features">Our Features</a>
+                <a href="#why-us">Why Choose Us</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="https://discord.gg/your-discord" target="_blank" class="discord-button">
+                    <i class="fab fa-discord"></i>
+                    Join Discord
+                </a>
             </div>
         </nav>
     </header>
@@ -876,10 +856,6 @@
                 <p>Get your script done by us today without coding. Professional Roblox script development services to take your game to the next level.</p>
                 <div class="button-group">
                     <a href="#contact" class="cta-button">Let's Get Started</a>
-                    <a href="https://discord.gg/your-discord" target="_blank" class="discord-button">
-                        <i class="fab fa-discord"></i>
-                        Join Discord
-                    </a>
                 </div>
             </div>
         </div>
@@ -922,7 +898,7 @@
                     <div class="stat-number">250+</div>
                     <div class="stat-title">Happy Clients</div>
                     <div class="stat-desc">Satisfied clients who trust us with their game development needs</div>
-                    <div class="stat-icon">🙋‍♂️</div>
+                    <div class="stat-icon">🙋‍♂️🙋‍♂️</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">5+</div>
