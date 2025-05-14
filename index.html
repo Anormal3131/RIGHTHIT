@@ -97,7 +97,7 @@
             border-radius: 6px;
         }
 
-        .nav-links a:not(.discord-button):hover, .nav-links a.active {
+        .nav-links a:not(.discord-navbar):hover, .nav-links a.active {
             color: var(--primary);
             background: rgba(0,255,136,0.07);
             border-bottom: 2px solid var(--primary);
@@ -105,6 +105,32 @@
 
         .nav-links a.active {
             font-weight: 700;
+        }
+
+        /* Discord Navbar Butonu */
+        .discord-navbar {
+            background: linear-gradient(90deg, #5865F2 60%, #7289da 100%);
+            color: #fff;
+            padding: 10px 26px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 24px 0 rgba(88,101,242,0.15);
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+        }
+        .discord-navbar i {
+            font-size: 20px;
+        }
+        .discord-navbar:hover {
+            background: linear-gradient(90deg, #7289da 0%, #5865F2 100%);
+            box-shadow: 0 8px 32px 0 rgba(88,101,242,0.25);
+            transform: translateY(-2px) scale(1.04);
         }
 
         /* Hero Section */
@@ -173,56 +199,58 @@
         /* Hero Buton Grubu için CSS */
         .button-group {
             display: flex;
-            justify-content: center; /* Butonları grup içinde ortalar */
-            align-items: center; /* Butonları dikeyde hizalar */
-            gap: 20px; /* Butonlar arası boşluk */
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             margin-top: 40px;
         }
-
-        .cta-button, .discord-button { /* Genel buton stillerini sıfırlama veya ayarlama */
-            margin: 0; /* Üst/alt margin'i sıfırlar, button-group zaten boşluk veriyor */
+        .cta-button, .discord-hero {
+            margin: 0;
         }
-        /* Bitiş - Hero Buton Grubu için CSS */
-
         .cta-button {
-            margin: 0 auto;
-            display: block;
-            width: fit-content;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            padding: 18px 36px;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+            color: #222;
+            font-weight: 700;
+            font-size: 18px;
             border: none;
-            border-radius: 50px;
-            font-weight: 600;
+            border-radius: 30px;
+            padding: 15px 36px;
+            box-shadow: 0 4px 24px 0 rgba(0,255,136,0.15);
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cta-button:hover {
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+            box-shadow: 0 8px 32px 0 rgba(0,255,136,0.25);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .discord-hero {
+            background: linear-gradient(90deg, #5865F2 60%, #7289da 100%);
+            color: #fff;
+            padding: 15px 36px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
             font-size: 18px;
             cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 24px 0 rgba(88,101,242,0.15);
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
         }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.3),
-                       0 0 20px var(--primary),
-                       0 0 40px var(--primary);
+        .discord-hero i {
+            font-size: 22px;
         }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
+        .discord-hero:hover {
+            background: linear-gradient(90deg, #7289da 0%, #5865F2 100%);
+            box-shadow: 0 8px 32px 0 rgba(88,101,242,0.25);
+            transform: translateY(-2px) scale(1.04);
         }
 
         /* Features Section */
@@ -803,33 +831,6 @@
             50% { background-position: 100% 100%; }
             100% { background-position: 0% 0%; }
         }
-
-        .discord-button {
-            background: linear-gradient(90deg, #5865F2 60%, #7289da 100%);
-            color: #fff;
-            padding: 12px 32px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 4px 24px 0 rgba(88,101,242,0.15);
-            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-        }
-
-        .discord-button i {
-            font-size: 22px;
-        }
-
-        .discord-button:hover {
-            background: linear-gradient(90deg, #7289da 0%, #5865F2 100%);
-            box-shadow: 0 8px 32px 0 rgba(88,101,242,0.25);
-            transform: translateY(-2px) scale(1.04);
-        }
     </style>
 </head>
 <body>
@@ -841,9 +842,9 @@
                 <a href="#why-us">Why Choose Us</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
-                <a href="https://discord.gg/your-discord" target="_blank" class="discord-button">
+                <a href="https://discord.gg/your-discord" target="_blank" class="discord-navbar">
                     <i class="fab fa-discord"></i>
-                    Join Discord
+                    Discord
                 </a>
             </div>
         </nav>
@@ -856,6 +857,10 @@
                 <p>Get your script done by us today without coding. Professional Roblox script development services to take your game to the next level.</p>
                 <div class="button-group">
                     <a href="#contact" class="cta-button">Let's Get Started</a>
+                    <a href="https://discord.gg/your-discord" target="_blank" class="discord-hero">
+                        <i class="fab fa-discord"></i>
+                        Join Discord
+                    </a>
                 </div>
             </div>
         </div>
